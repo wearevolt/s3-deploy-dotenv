@@ -1,0 +1,23 @@
+{
+  "name": "s3-deploy-dotenv",
+  "version": "0.0.1",
+  "description": "S3 deploy by .env file",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "s3",
+    "deploy",
+    "env"
+  ],
+  "author": "Alexander \"Staltec\" Prozorov",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "s3": "^4.4.0"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  }
+}
