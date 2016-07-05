@@ -30,8 +30,10 @@ deploy.config({
 
     // gzip (optional)
     gzipLevel:       env.S3_GZIP_LEVEL|0,
-    gzipExtensions: (env.S3_GZIP_EXTENSIONS || '').split(/ *, */)
+    gzipExtensions: (env.S3_GZIP_EXTENSIONS || '').split(/ *, */),
 
+    // Replace on maintenance
+    replaceUntilMaintenance: (env.S3_REPLACE_UNTIL_MAINTENANCE || '').split(/ *, */)
 });
 
 deploy.on('start', function (options) {
