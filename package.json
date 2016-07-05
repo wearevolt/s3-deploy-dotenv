@@ -1,6 +1,6 @@
 {
   "name": "s3-deploy-dotenv",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "S3 deploy by .env file",
   "main": "lib/index.js",
   "bin": "./bin/s3-deploy-dotenv.js",
