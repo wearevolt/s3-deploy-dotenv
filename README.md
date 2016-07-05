@@ -72,7 +72,7 @@ Always keep `.env` entry in your `.gitignore` file to avoid data leakage passwor
 
 Have a bug? Please create an issue here on GitHub!
 
-[https://github.com/wearevolt/bundlehash-webpack-plugin/issues](https://github.com/wearevolt/s3-deploy-dotenv/issues)
+[https://github.com/wearevolt/s3-deploy-dotenv/issues](https://github.com/wearevolt/s3-deploy-dotenv/issues)
 
 ### License
 
