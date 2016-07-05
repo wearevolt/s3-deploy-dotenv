@@ -1,6 +1,7 @@
 # S3 Deploy Dotenv (S3D2)
 
 This module provides a simple and fast way to upload data to the Amazon S3 by a single command using the values of the environment variables.
+It enables compression on the fly for the selected file extensions.
 
 ### Install
 ```
