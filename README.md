@@ -71,7 +71,7 @@ For example:
 ```
  S3_REPLACE_UNTIL_MAINTENANCE=index.html,maintenance.html
 ```
-Before start upload, `maintenance.html` will be uploaded as `index.html`.
+Before start upload all other files, `maintenance.html` will be uploaded as `index.html`.
 After all files uploading is done, content of `index.html` on server will be replaced with the original `index.html`.
  
 Important note: extensions of target and stub files must be same avoid warning message:
