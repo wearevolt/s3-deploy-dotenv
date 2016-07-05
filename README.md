@@ -65,8 +65,10 @@ Always keep `.env` entry in your `.gitignore` file to avoid data leakage passwor
   
 ### TODO
 * Unit tests
+* Replacement index file until uploading
+* Gzip minimal size
 * Add ignored file extensions
-* Any ideas? Request features [there](https://github.com/wearevolt/s3-deploy-dotenv/labels/enhancement) 
+* Any ideas? Request features [here](https://github.com/wearevolt/s3-deploy-dotenv/labels/enhancement) 
 
 ### Issues
 
