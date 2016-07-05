@@ -30,8 +30,10 @@ deploy.config({
 
     // gzip (optional)
     gzipLevel:       env.S3_GZIP_LEVEL|0,
-    gzipExtensions: (env.S3_GZIP_EXTENSIONS || '').split(/ *, */)
+    gzipExtensions: (env.S3_GZIP_EXTENSIONS || '').split(/ *, */),
 
+    // Replace on maintenance
+    replaceUntilMaintenance: (env.S3_REPLACE_UNTIL_MAINTENANCE || '').split(/ *, */)
 });
 
 deploy.on('start', function (options) {
@@ -43,7 +45,7 @@ deploy.on('error', function (err) {
 });
 
 deploy.on('upload', function (file, percent, details) {
-    console.log(' ' + percent.toFixed(0).slice(-3) +  '%', file.fullPath, '->', file.url);
+    console.log(' ' + percent.toFixed(0).slice(-3) +  '%', file.fullPath, '->', file.remotePath, file.size);
     if (isDebugMode) {
         console.log(' DEBUG>', details, '\n');
     }

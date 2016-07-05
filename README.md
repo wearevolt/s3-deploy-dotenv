@@ -60,12 +60,30 @@ S3_GZIP_LEVEL=9
 - `S3_GZIP_EXTENSIONS` file extensions that you want to compress. A comma-separated list, allowed space;
 - `S3_GZIP_LEVEL` gzip compression level. Default value `5`;
 
+### Show maintenance screen until uploading
+If you need to show maintenance information until uploading files, use `S3_REPLACE_UNTIL_MAINTENANCE` parameter.
+```
+ S3_REPLACE_UNTIL_MAINTENANCE=[target_file],[stub_file]
+```
+Options `[target_file]` and `[stub_file]` is required.
+
+For example:
+```
+ S3_REPLACE_UNTIL_MAINTENANCE=index.html,maintenance.html
+```
+Before start upload all other files, `maintenance.html` will be uploaded as `index.html`.
+After all files uploading is done, content of `index.html` on server will be replaced with the original `index.html`.
+ 
+Important note: extensions of target and stub files must be same avoid warning message:
+```
+  WARNING> Target and stub files should have same extensions!
+```
+
 ### Security note
 Always keep `.env` entry in your `.gitignore` file to avoid data leakage passwords and secret keys!
   
 ### TODO
 * Unit tests
-* Replacement index file until uploading
 * Gzip minimal size
 * Add ignored file extensions
 * Any ideas? Request features [here](https://github.com/wearevolt/s3-deploy-dotenv/labels/enhancement) 
