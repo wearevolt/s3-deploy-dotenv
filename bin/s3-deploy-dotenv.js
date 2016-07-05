@@ -43,7 +43,7 @@ deploy.on('error', function (err) {
 });
 
 deploy.on('upload', function (file, percent, details) {
-    console.log(' ' + percent.toFixed(0).slice(-3) +  '%', file.fullPath, '->', file.url, file.size);
+    console.log(' ' + percent.toFixed(0).slice(-3) +  '%', file.fullPath, '->', file.remotePath, file.size);
     if (isDebugMode) {
         console.log(' DEBUG>', details, '\n');
     }
