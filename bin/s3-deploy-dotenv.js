@@ -5,22 +5,28 @@ require('dotenv').config();
 var deploy = require('../lib');
 var env = process.env;
 
+var isDebugMode = !!env.S3_DEBUG_MODE;
 
 deploy.config({
-    // Required
+    // S3 required
     region:          env.S3_REGION,
     accessKeyId:     env.S3_ACCESS_KEY_ID,
     secretAccessKey: env.S3_SECRET_ACCESS_KEY,
     bucket :         env.S3_BUCKET,
 
-    // optional
-    localDir:        env.S3_LOCAL_DIR,
-    remoteDir:       env.S3_PREFIX,
-
-    maxAsyncStreams: env.S3_MAX_ASYNC_STREAMS|0,
+    // S3 optional
+    maxAsyncStreams:       env.S3_MAX_ASYNC_STREAMS|0,
     uploadConcurrentParts: env.S3_UPLOAD_CONCURRENT_PARTS|0,
-    uploadMaxPartSize:     env.UPLOAD_MAX_PART_SIZE|0,
+    uploadMaxPartSize:     env.S3_UPLOAD_MAX_PART_SIZE|0,
     defaultContentType:    env.S3_DEFAULT_CONTENT_TYPE|0,
+    s3RetryCount:          env.S3_RETRY_COUNT|0,
+    s3RetryDelay:          env.S3_RETRY_DELAY|0,
+    multipartUploadThreshold: env.S3_MULTIPART_UPLOAD_THRESHOLD|0,
+    multipartUploadSize:      env.S3_MULTIPART_UPLOAD_SIZE|0,
+
+    // locations (optional)
+    localDir:  env.S3_LOCAL_DIR,
+    remoteDir: env.S3_PREFIX,
 
     // gzip (optional)
     gzipLevel:       env.S3_GZIP_LEVEL|0,
@@ -38,7 +44,7 @@ deploy.on('error', function (err) {
 
 deploy.on('upload', function (file, percent, details) {
     console.log(' ' + percent.toFixed(0).slice(-3) +  '%', file.fullPath, '->', file.url);
-    if (env.S3_VERBOSE) {
+    if (isDebugMode) {
         console.log(' DEBUG>', details, '\n');
     }
 });
