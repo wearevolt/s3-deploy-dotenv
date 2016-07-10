@@ -1,4 +1,4 @@
-# S3 Deploy Dotenv (S3D2) [![npm][npm-badge]][npm]
+# S3 Deploy Dotenv (S3D2) [![npm version](https://badge.fury.io/js/s3-deploy-dotenv.svg)](https://badge.fury.io/js/s3-deploy-dotenv)
 
 This module provides a simple and fast way to upload data to the Amazon S3 by a single command using the values of the environment variables.
 It enables compression on the fly for the selected file extensions.
