@@ -41,9 +41,16 @@ S3_GZIP_LEVEL=5
 S3_DEBUG_MODE=true
 ```
 
-### Run
+### Use
+As sample usage add to `scripts` section of `package.json` following command:
 ```
-s3-deploy-dotenv
+ "scripts": {
+    "deploy": "s3-deploy-dotenv"
+  }
+```
+Then run `deploy` command:
+```
+npm run deploy
 ```
 
 ### Gzip content
