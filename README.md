@@ -27,6 +27,9 @@ S3_RETRY_DELAY=1000
 S3_MULTIPART_UPLOAD_THRESHOLD=20971520
 S3_MULTIPART_UPLOAD_SIZE=15728640
 
+# CloudFront
+CLOUDFRONT_DISTRIBUTION=CLOUDFRONT_DISTRIBUTION_KEY
+
 # Source directory, if empty use project root 
 S3_LOCAL_DIR=dist
 
@@ -52,6 +55,9 @@ Then run `deploy` command:
 ```
 npm run deploy
 ```
+
+### CloudFront cache invalidation
+Set `CLOUDFRONT_DISTRIBUTION` for smart cache invalidation. Invalidation apply only for files with changed ETag.  
 
 ### Gzip content
 Files with the extensions you specify will be compressed on the fly without the creation of additional temporary files on disk.
