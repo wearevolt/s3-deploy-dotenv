@@ -1,1 +1,14 @@
-# Created by .ignore support plugin (hsz.mobi)
+.idea/
+public/
+dist/*
+node_modules/
+npm-debug.log
+.DS_Store
+**/.DS_Store
+.powenv
+.env*
+!.env.sample
+TODO*
+DOCS
+!.keep
+!.gitkeep
