@@ -24,6 +24,9 @@ deploy.config({
     multipartUploadThreshold: env.S3_MULTIPART_UPLOAD_THRESHOLD|0,
     multipartUploadSize:      env.S3_MULTIPART_UPLOAD_SIZE|0,
 
+    // CloudFront
+    cloudFrontDistribution: env.CLOUDFRONT_DISTRIBUTION,
+
     // locations (optional)
     localDir:  env.S3_LOCAL_DIR,
     remoteDir: env.S3_PREFIX,
