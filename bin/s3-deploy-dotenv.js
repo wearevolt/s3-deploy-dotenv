@@ -44,7 +44,7 @@ deploy.on('start', function (options) {
 });
 
 deploy.on('error', function (err) {
-    console.log('\nError: ' + err);
+    console.log('\nError: ' + err + err.stack);
 });
 
 deploy.on('upload', function (file, percent, details) {
